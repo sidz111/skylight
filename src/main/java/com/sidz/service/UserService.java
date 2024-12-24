@@ -1,5 +1,7 @@
 package com.sidz.service;
 
+import java.util.List;
+
 import com.sidz.entities.User;
 
 public interface UserService {
@@ -8,4 +10,5 @@ public interface UserService {
 	
 	User addUser(User user);    // C- Create / add / insert
 	
+	List<User> getAllUsers();
 }
