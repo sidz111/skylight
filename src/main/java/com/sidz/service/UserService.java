@@ -11,4 +11,10 @@ public interface UserService {
 	User addUser(User user);    // C- Create / add / insert
 	
 	List<User> getAllUsers();
+	
+	User getUserById(Integer id);
+	
+	List<User> getUsersByName(String name);
+	
+	String deleteUserById(Integer id);
 }
