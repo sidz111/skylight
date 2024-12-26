@@ -2,6 +2,8 @@ package com.sidz.service;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
+
 import com.sidz.entities.User;
 
 public interface UserService {
@@ -10,11 +12,13 @@ public interface UserService {
 	
 	User addUser(User user);    // C- Create / add / insert
 	
-	List<User> getAllUsers();
+	List<User> getAllUsers();   // R - get all users
 	
-	User getUserById(Integer id);
+	User getUserById(Integer id);  // R - get user by id
 	
-	List<User> getUsersByName(String name);
+	List<User> getUsersByName(String name); // R - get users by name
 	
-	String deleteUserById(Integer id);
+	String deleteUserById(Integer id);    // D - Delete
+	
+	ResponseEntity<User> updateUser(User user);      // U - Update user
 }

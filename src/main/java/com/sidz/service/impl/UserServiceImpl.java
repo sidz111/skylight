@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.sidz.entities.User;
@@ -50,5 +51,17 @@ public class UserServiceImpl implements UserService{
 	public String deleteUserById(Integer id) {
 		userRepository.deleteById(id);
 		return "User delete with id: "+id;
+	}
+
+	@Override
+	public ResponseEntity<User> updateUser(User user) {
+		Optional<User> u = userRepository.findById(user.getId());
+		if(u.isEmpty()) {
+			return ResponseEntity.badRequest().body(user);
+		}
+		else {
+			 userRepository.save(user);
+			 return ResponseEntity.ok(user);
+		}
 	}
 }
