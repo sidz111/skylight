@@ -13,9 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sidz.entities.User;
 import com.sidz.service.UserService;
 
-@RestController
+@RestController    // diff between rest API ans API
 //@RequestMapping("/user")  //common api for all rest api's
 public class UserController {
+	
+	// POST, GET, DELETE, PUT
+	//@RequestBody ----> for passing object 
+	//@RequestParam ---> for passing only variables
 
 	@Autowired
 	UserService userService;
